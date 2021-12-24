@@ -5,14 +5,19 @@
         <!-- Navigation-->
         <%- include('layouts/navbar'); -%>
         <!-- Page Header -->
-        <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('/assets/img/home-bg.jpg')">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto">
-                        <div class="site-heading">
-                            <h1>Clean Blog</h1>
-                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        <div class="post-heading">
+                            <h1><%= blogpost.title %></h1>
+                            <h2 class="subdheading"><%= blogpost.body %></h2>
+                            <span class="meta">
+                                Posted by
+                                <a href='#'><%= blogpost.username %></a>
+                                on <%= blogpost.datePosted.toDateString() %>
+                            </span>
                         </div>
                     </div> 
                 </div>
