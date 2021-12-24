@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
+const mongoose = require('mongoose')
 
+mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true})
 const app = new express()
 const ejs = require('ejs')
 app.set('view engine', 'ejs')
