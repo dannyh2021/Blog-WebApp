@@ -14,6 +14,14 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(fileUpload())
 
+const validationMiddleWare = (req, res, next) => {
+    if (req.files == null || req.body.title == null || req.body.title == null) {
+        return res.redirect('/posts/new')
+    }
+    next()
+}
+app.use('/posts/store', validationMiddleWare)
+
 app.listen(4000, () => {
     console.log('App listening on port 4000')
 })
