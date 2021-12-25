@@ -3,6 +3,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const BlogPost = require('./models/BlogPost.js')
+const fileUpload = require('express-fileupload')
 
 mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true})
 const app = new express()
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(fileUpload())
 
 app.listen(4000, () => {
     console.log('App listening on port 4000')
@@ -42,7 +44,13 @@ app.get('/posts/new', (req, res) => {
     res.render('create')
 })
 
-app.post('/posts/store', async (req, res) => {
-    await BlogPost.create(req.body)
-    res.redirect('/')
+app.post('/posts/store', (req, res) => {
+    let image = req.files.image
+    image.mv(path.resolve(__dirname,'public/assets/img', image.name), async (error) => {
+        await BlogPost.create({
+            ...req.body,
+            image: '/assets/img/' + image.name
+        })
+        res.redirect('/')
+    })
 })
