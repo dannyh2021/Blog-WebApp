@@ -14,6 +14,7 @@
     "node": "v16.13.1"
   },
   "dependencies": {
+    "bcrpyt": "^2.0.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.1",
     "connect-flash": "^0.1.1",
