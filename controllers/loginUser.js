@@ -7,8 +7,8 @@ module.exports = (req, res) => {
     User.findOne({username: username}, (error, user) => {
         if (user) {
             bcrpyt.compare(password, user.password, (error, same) => {
-                if (same) { // if passwords match
-                    // store user session
+                if (same) {
+                    req.session.userId = user._id
                     res.redirect('/')
                 } else {
                     res.redirect('/auth/login')
