@@ -19,7 +19,8 @@ const flash = require('connect-flash')
 
 global.loggedIn = null;
 
-mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true})
+// mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true})
+mongoose.connect('mongodb+srv://danny:danny@cluster0.zrp4g.mongodb.net/my_database?retryWrites=true&w=majority', {useNewUrlParser: true})
 const app = new express()
 const ejs = require('ejs')
 app.set('view engine', 'ejs')
