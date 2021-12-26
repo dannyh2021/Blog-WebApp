@@ -18,6 +18,6 @@ It includes basic user registration and login functions (with authentication and
 
 To run the code, you should clone the repository and run _node index.js_ in the terminal, after which you can view the app in localhost:4000. However, you would need to also set up and run a local MongoDB database and change the path in the file before your run it.
 
-I also hosted this webapp on Heroku, so the easiest way to view it would be to visit https://dashboard.heroku.com/apps/shrouded-depths-64192 or https://blog.danny-huang.com
+I also hosted this webapp on Heroku, so the easiest way to view it would be to visit https://shrouded-depths-64192.herokuapp.com or https://blog.danny-huang.com
 
 Thanks for reading.
