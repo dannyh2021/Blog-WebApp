@@ -15,6 +15,7 @@ const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
 const logoutController = require('./controllers/logout')
 const expressSession = require('express-session')
+const flash = require('connect-flash')
 
 global.loggedIn = null;
 
@@ -30,6 +31,7 @@ app.use('/posts/store', validateMiddleware)
 app.use(expressSession({
     secret: 'keyboard cat'
 }))
+app.use(flash())
 app.use('*', (req, res, next) => {
     loggedIn = req.session.userId
     next()
