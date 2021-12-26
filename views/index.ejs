@@ -37,9 +37,10 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- render blogposts -->
+                    <% console.log('testing: ' + blogposts) %>
                     <% for (var i = 0; i < blogposts.length; i++) { %>
                         <div class="post-preview">
-                            <a href="/post/<%= blogposts[i]._id %>">
+                            <a href="/post/<%=  blogposts[i]._id %>">
                                 <h2 class="post-title">
                                     <%= blogposts[i].title %>
                                 </h2>
@@ -48,7 +49,7 @@
                                 </h3>
                                 <p class="post-meta">
                                     Posted by
-                                    <a href='#'><%= blogposts[i].username %></a>
+                                    <a href='#'><%= blogposts[i].userid.username %></a>
                                     on <%= blogposts[i].datePosted.toDateString() %>
                                 </p>
                             </a>
