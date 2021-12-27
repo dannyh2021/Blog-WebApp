@@ -12,6 +12,7 @@ It includes basic user registration and login functions (with authentication and
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://nodejs.org/en/)
 * [MongoDB](https://www.mongodb.com)
+* [Bootstrap](https://getbootstrap.com)
 
 <!-- How to View -->
 ## How to View
